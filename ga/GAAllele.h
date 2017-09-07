@@ -94,6 +94,9 @@ template <class T> int operator!=(const T &, const T &);
 template <class T>
 class GAAlleleSet {
 public:
+  
+  typedef T value_type;
+  
   GAAlleleSet() : core(0) {}
   GAAlleleSet(unsigned int n, const T a[]) : 
   core(new GAAlleleSetCore<T>(n,a)) {}
@@ -162,6 +165,9 @@ protected:
 template <class T> 
 class GAAlleleSetArray {
 public:
+  
+  typedef T value_type;
+
   GAAlleleSetArray();
   GAAlleleSetArray(const GAAlleleSet<T>& s);
   GAAlleleSetArray(const GAAlleleSetArray<T>&);

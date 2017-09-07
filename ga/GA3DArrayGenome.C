@@ -481,7 +481,7 @@ GA3DArrayAlleleGenome<ARRAY_TYPE>::FlipMutator(GAGenome & c, float pmut)
 {
   GA3DArrayAlleleGenome<ARRAY_TYPE> &child=
     DYN_CAST(GA3DArrayAlleleGenome<ARRAY_TYPE> &, c);
-  register int n, m, d, i, j, k;
+  int n, m, d, i, j, k;
   if(pmut <= 0.0) return(0);
 
   float nMut = pmut * STA_CAST(float,child.size());
@@ -516,7 +516,7 @@ template <class ARRAY_TYPE> int
 GA3DArrayGenome<ARRAY_TYPE>::SwapMutator(GAGenome & c, float pmut)
 {
   GA3DArrayGenome<ARRAY_TYPE> &child=DYN_CAST(GA3DArrayGenome<ARRAY_TYPE>&, c);
-  register int n, i;
+  int n, i;
   if(pmut <= 0.0) return(0);
 
   float nMut = pmut * STA_CAST(float,child.size());
@@ -716,11 +716,11 @@ GAGenome* c1, GAGenome* c2){
     }
     else{
       int startx, starty, startz;
-      int maxx = (sis.width() > bro.width()) ? sis.width() : bro.width();
+      //int maxx = (sis.width() > bro.width()) ? sis.width() : bro.width();
       int minx = (mom.width() < dad.width()) ? mom.width() : dad.width();
-      int maxy = (sis.height() > bro.height()) ? sis.height() : bro.height();
+      //int maxy = (sis.height() > bro.height()) ? sis.height() : bro.height();
       int miny = (mom.height() < dad.height()) ? mom.height() : dad.height();
-      int maxz = (sis.depth() > bro.depth()) ? sis.depth() : bro.depth();
+      //int maxz = (sis.depth() > bro.depth()) ? sis.depth() : bro.depth();
       int minz = (mom.depth() < dad.depth()) ? mom.depth() : dad.depth();
       startx = (sis.width() < minx) ? sis.width() : minx;
       starty = (sis.height() < miny) ? sis.height() : miny;
